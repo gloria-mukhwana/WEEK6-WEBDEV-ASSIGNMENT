@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <title>Interactive Web Elements and Form Validation</title>
     <link rel="stylesheet" href="ONE.css"> 
-<script src="ONE.js"></script>
 </head>
 <body>
     <h2>Interactive Elements</h2>
     <button id="changeColor">Click me!</button>
-    <img id="galleryImage" src="weight 1.jpg" alt="Image 1" onclick="changeImage()" />
+    <img height="350px" id="galleryImage" src="weight 1.jpg" alt="Image 1" onclick="changeImage()" />
 
     <h2>Tabs/Accordion</h2>
     <div id="accordion">
