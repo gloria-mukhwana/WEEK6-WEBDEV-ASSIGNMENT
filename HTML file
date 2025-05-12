@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Web Elements and Form Validation</title>
+    <link rel="stylesheet" href="ONE.css"> 
+<script src="ONE.js"></script>
+</head>
+<body>
+    <h2>Interactive Elements</h2>
+    <button id="changeColor">Click me!</button>
+    <img id="galleryImage" src="weight 1.jpg" alt="Image 1" onclick="changeImage()" />
+
+    <h2>Tabs/Accordion</h2>
+    <div id="accordion">
+        <div class="accordion-item" id="tab1" onclick="toggleTab(this)">
+            <h3>Tab 1</h3>
+            <div>Content for Tab 1</div>
+        </div>
+        <div class="accordion-item" id="tab2">
+            <h3>Tab 2</h3>
+            <div>Content for Tab 2</div>
+        </div>
+    </div>
+
+    <form id="myForm">
+        <label for="username">Username: </label><br>
+        <input type="text" id="username" name="username" required><br>
+        <label for="email">Email: </label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="password">Password: </label><br>
+        <input type="password" id="password" name="password" required minlength="8"><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Secret Actions</h2>
+    <p id="secretFeedback">Secret actions coming soon...</p>
+
+    <script src="ONE.js"></script>
+</body>
+</html>
