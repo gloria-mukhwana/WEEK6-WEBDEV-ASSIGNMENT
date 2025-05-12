@@ -1,0 +1,17 @@
+button, img {
+    transition: all 0.3s ease;
+}
+.accordion-item {
+    transition: all 0.3s ease;
+}
+.accordion-item.open {
+    transform: translate3d(0, 0, 0);
+}
+.accordion-item:not(.open) {
+    transform: translate3d(0, -100%, 0);
+    opacity: 0;
+}
+
+#changeColor {
+    cursor: pointer;
+}
