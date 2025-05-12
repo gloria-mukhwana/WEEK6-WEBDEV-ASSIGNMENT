@@ -1,0 +1,82 @@
+// Event Handling
+document.getElementById('changeColor').addEventListener('click', function() {
+    this.textContent = this.getAttribute('data-newtext') || 'Original Text';
+    this.style.backgroundColor = this.getAttribute('data-newcolor') || 'blue';
+    setTimeout(() => {
+        this.textContent = 'Click me!';
+        this.style.backgroundColor = 'white';
+    }, 2000);
+});
+
+// Hover Effects
+document.querySelectorAll('button, img').forEach(elem => {
+    elem.addEventListener('mouseenter', function() {
+        this.style.cursor = 'pointer';
+        this.style.border = '2px solid green';
+    });
+    elem.addEventListener('mouseleave', function() {
+        this.style.border = 'none';
+        this.style.cursor = '';
+    });
+});
+
+// Keypress detection 
+document.addEventListener('keydown', function(e) {
+    if (e.code === 'Space' && e.key === ' ') {
+        if (e.isComposed) { // Detects if it's a composed key event (like double click)
+            alert('You have performed a special action!');
+        }
+    }
+});
+
+// Image gallery (simple toggle on click)
+function changeImage() {
+    let image = document.getElementById('image.jpg');
+    image.src = 'weight2.jpg'; 
+}
+
+// Tabs/Accordion functionality
+function toggleTab(tab) {
+    let accordion = tab.parentNode;
+    let heading = tab.children[0];
+    let content = tab.nextElementSibling;
+    
+    accordion.classList.toggle('open');
+    if (accordion.classList.contains('open')) {
+        heading.style.backgroundColor = 'lightgrey';
+        content.style.display = 'block';
+    } else {
+        heading.style.backgroundColor = 'white';
+        content.style.display = 'none';
+    }
+}
+
+// Form Validation with real-time feedback
+document.getElementById('myForm').addEventListener('input', function(e) {
+    let formElement = e.target;
+    let error = document.getElementById(formElement.name + '_error');
+    if (formElement.type === 'email') {
+        let re = /\S+@\S+\.\S+/;
+        if (!re.test(formElement.value)) {
+            error.textContent = "Please enter a valid email.";
+            error.style.color = 'red';
+        } else {
+            error.textContent = '';
+            error.style.color = '';
+        }
+    } else if (formElement.name === 'password' && formElement.value.length < 8) {
+        error = document.getElementById('password_error');
+        error.textContent = "Password must be at least 8 characters.";
+        error.style.color = 'red';
+    } else {
+        error.textContent = '';
+        error.style.color = '';
+    }
+});
+
+// Secret Feedback
+let secretFeedback = document.getElementById('secretFeedback');
+document.addEventListener('dblclick', function() {
+    secretFeedback.textContent = 'You found the secret!';
+    setTimeout(() => { secretFeedback.textContent = ''; }, 3000);
+});
